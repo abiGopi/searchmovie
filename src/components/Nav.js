@@ -11,7 +11,9 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
-
+import InputAdornment from "@material-ui/core/InputAdornment";
+import SearchIcon from "@material-ui/icons/Search";
+import TextField from "@mui/material/TextField";
 import useStyles from "./useStyles";
 import { movieData } from "../reducers/movieAction";
 
@@ -83,13 +85,19 @@ export const Navbar = () => {
           <Typography variant="h6" color="inherit">
             Movie Finder
           </Typography>
-          <Input
+          &nbsp;&nbsp;
+          <TextField
             id="searchMovie"
             variant={"standard"}
-            className={classes.search}
             onChange={handleSearch}
-            label="Search Movie"
             placeholder="Search Movie by name"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }}
           />
         </Toolbar>
       </AppBar>
@@ -130,7 +138,7 @@ export const Navbar = () => {
         <TablePagination
           rowsPerPageOptions={[10, 25, 100]}
           component="div"
-          count={20}
+          count={10}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}
