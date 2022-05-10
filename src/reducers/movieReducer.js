@@ -9,7 +9,6 @@ const intitialState = {
           movieData: [...state.movieData, action.payload]
         };
       default:
-        console.log(state);
         return state;
     }
   };
