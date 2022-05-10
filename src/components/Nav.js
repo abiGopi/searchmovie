@@ -22,7 +22,6 @@ export const Navbar = () => {
   const [list, setList] = useState([]);
   const dispatch = useDispatch();
   const movieDataObject = useSelector((state) => state.movies.movieData);
-  console.log("movieDataObject", movieDataObject);
   const columns = [
     { id: "id", label: "Id", minWidth: 170 },
     { id: "title", label: "Title", minWidth: 100 },
